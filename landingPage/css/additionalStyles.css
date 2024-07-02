@@ -185,8 +185,8 @@ header .btn-get-started {
     }
 
 .contactBtn {
-    color: #0068A7;
-    background-color: #ffffff;
+    color: #fff;
+    background-color: #0068A7;
     border-color: #0068A7;
     border-radius: 0.25rem;
 }
@@ -197,5 +197,5 @@ header .btn-get-started {
     .contactBtn.active {
         background: #0068A7;
         color: #ffffff;
-        border-color: #0068A7;
+        border-color: #fff;
     }
