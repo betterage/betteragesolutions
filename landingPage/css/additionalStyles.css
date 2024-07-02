@@ -1,0 +1,201 @@
+﻿.card {
+    border-color: #fff;
+}
+
+.d-none {
+    display: none;
+}
+
+.invalid-feedback {
+    display: none;
+}
+
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+.contactIcon {
+    font-size: 20px;
+    float: left;
+    width: 44px;
+    height: 44px;
+    background: #f6f9fe;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.contactInfo h4 {
+    padding: 0 0 0 60px;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.contactInfo p {
+    padding: 0 0 10px 60px;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+
+header {
+    position: relative;
+    background-color: black;
+    height: 100vh;
+    min-height: 25rem;
+    width: 100%;
+    overflow: hidden;
+}
+
+    header video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: 0;
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+    }
+
+    header .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    header .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity: 0.5;
+        z-index: 1;
+    }
+
+@media (pointer: coarse) and (hover: none) {
+    header {
+        background: url('../assets/img/header.jpg') black no-repeat center center scroll;
+    }
+
+        header video {
+            display: none;
+        }
+}
+
+
+
+header .btn-get-started {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 50px;
+    transition: 0.5s;
+    margin: 10px;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+}
+
+    header .btn-get-started:hover {
+        background: #0068A7;
+        border: 2px solid #0068A7;
+    }
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #2dc997;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: all 0.4s;
+}
+
+    .back-to-top i {
+        font-size: 28px;
+        color: #fff;
+        line-height: 0;
+    }
+
+    .back-to-top:hover {
+        background: #49d6a9;
+        color: #fff;
+    }
+
+    .back-to-top.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    transition: top 0.08s ease-in-out;
+}
+
+    .navbar.hide {
+        top: -150px
+    }
+
+
+.text-company {
+    color: #0068A7;
+}
+
+.lightTheme {
+    background: #f7f7f7;
+}
+
+.companyTheme {
+    background: #0068A7;
+}
+
+#linkedinIcon {
+    color: rgba(255, 255, 255, 0.5);
+}
+    #linkedinIcon:hover {
+        color: #ffffff;
+    }
+
+#linkedinBossIcon {
+    color: #787878;
+}
+    #linkedinBossIcon:hover {
+        color: #0077b5;
+    }
+
+.contactBtn {
+    color: #0068A7;
+    background-color: #ffffff;
+    border-color: #0068A7;
+    border-radius: 0.25rem;
+}
+
+    .contactBtn:hover,
+    .contactBtn:active,
+    .contactBtn:focus,
+    .contactBtn.active {
+        background: #0068A7;
+        color: #ffffff;
+        border-color: #0068A7;
+    }
