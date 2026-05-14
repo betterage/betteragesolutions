@@ -1,49 +1,45 @@
-/*!
-* Start Bootstrap - New Age v6.0.5 (https://startbootstrap.com/theme/new-age)
-* Copyright 2013-2021 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-new-age/blob/master/LICENSE)
-*/
-//
-// Scripts
-// 
-
 window.addEventListener('DOMContentLoaded', event => {
 
-   
-
-    // Activate Bootstrap scrollspy on the main nav element
     const mainNav = document.body.querySelector('#mainNav');
     if (mainNav) {
         new bootstrap.ScrollSpy(document.body, {
             target: '#mainNav',
             offset: 74,
         });
-    };
+    }
 
-    // Collapse responsive navbar when toggler is visible
     const navbarToggler = document.body.querySelector('.navbar-toggler');
     const responsiveNavItems = [].slice.call(
         document.querySelectorAll('#navbarResponsive .nav-link')
     );
-    responsiveNavItems.map(function (responsiveNavItem) {
-        responsiveNavItem.addEventListener('click', () => {
+    responsiveNavItems.forEach(function (item) {
+        item.addEventListener('click', () => {
             if (window.getComputedStyle(navbarToggler).display !== 'none') {
                 navbarToggler.click();
             }
         });
     });
 
+    const nav = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            return document.querySelector('.navbar').classList.remove('hide')
-
+            nav.classList.remove('hide');
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.add('hide');
+            nav.classList.remove('scrolled');
         }
-        return document.querySelector('.navbar').classList.add('hide')
+    }, { passive: true });
+
+    document.querySelectorAll('img').forEach(function (img) {
+        img.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
     });
 
-    $('img').bind('contextmenu', function (e) {
-        return false;
-    });
-
+    const yearEl = document.querySelector('#siteFooter .mb-2');
+    if (yearEl) {
+        yearEl.textContent = yearEl.textContent.replace(/\d{4}/, new Date().getFullYear());
+    }
 
 });
