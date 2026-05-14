@@ -139,14 +139,21 @@ header .btn-get-started:hover {
     opacity: 1;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 .navbar {
     position: fixed;
     top: 0;
-    transition: top 0.08s ease-in-out;
+    transform: translateY(0);
+    transition: transform 0.25s ease-in-out;
+    will-change: transform;
 }
 
 .navbar.hide {
-    top: -150px;
+    transform: translateY(-100%);
 }
 
 .text-company {

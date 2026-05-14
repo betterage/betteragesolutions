@@ -21,13 +21,21 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
     const nav = document.querySelector('.navbar');
+    let scrollTicking = false;
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            nav.classList.remove('hide');
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.add('hide');
-            nav.classList.remove('scrolled');
+        if (!scrollTicking) {
+            window.requestAnimationFrame(() => {
+                const scrollY = window.pageYOffset;
+                if (scrollY > 50) {
+                    nav.classList.remove('hide');
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.add('hide');
+                    nav.classList.remove('scrolled');
+                }
+                scrollTicking = false;
+            });
+            scrollTicking = true;
         }
     }, { passive: true });
 
