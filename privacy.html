@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Better Age Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a2e;
+      --muted: #5a5a7a;
+      --accent: #2e6fad;
+      --accent-light: #e8f1f9;
+      --rule: #dde3ee;
+      --bg: #f7f8fc;
+      --white: #ffffff;
+      --section-num: #c8d4e8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--rule);
+      padding: 48px 0 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #e8f1f9 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .company-label {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin: 40px 0;
+    }
+    .toc-title {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+    @media (max-width: 560px) { .toc ol { grid-template-columns: 1fr; } }
+    .toc li { counter-increment: toc; display: flex; align-items: baseline; gap: 8px; }
+    .toc li::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--section-num);
+      min-width: 20px;
+    }
+    .toc a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 13.5px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: var(--ink); text-decoration: underline; }
+
+    /* ── Intro ── */
+    .intro {
+      color: var(--muted);
+      font-size: 14.5px;
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* ── Sections ── */
+    article { padding: 56px 0 0; }
+
+    section {
+      margin-bottom: 56px;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+    section:nth-child(1)  { animation-delay: 0.05s; }
+    section:nth-child(2)  { animation-delay: 0.10s; }
+    section:nth-child(3)  { animation-delay: 0.15s; }
+    section:nth-child(4)  { animation-delay: 0.20s; }
+    section:nth-child(5)  { animation-delay: 0.25s; }
+    section:nth-child(6)  { animation-delay: 0.30s; }
+    section:nth-child(7)  { animation-delay: 0.35s; }
+    section:nth-child(8)  { animation-delay: 0.40s; }
+    section:nth-child(9)  { animation-delay: 0.45s; }
+    section:nth-child(10) { animation-delay: 0.50s; }
+    section:nth-child(11) { animation-delay: 0.55s; }
+    @keyframes fadeUp { to { opacity: 1; transform: none; } }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .section-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--section-num);
+      letter-spacing: 0.05em;
+      min-width: 28px;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 24px 0 10px;
+    }
+
+    p { margin-bottom: 14px; font-size: 14.5px; }
+
+    ul {
+      list-style: none;
+      margin: 10px 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    ul li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      font-size: 14.5px;
+      padding: 8px 12px;
+      background: var(--accent-light);
+      border-radius: 6px;
+    }
+    ul li::before {
+      content: '—';
+      color: var(--accent);
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Highlight box ── */
+    .highlight {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* ── Contact ── */
+    .contact-block {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 24px 28px;
+      font-size: 14px;
+      line-height: 2;
+    }
+    .contact-block strong { color: var(--ink); font-weight: 500; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      margin-top: 64px;
+      padding: 32px 0;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <p class="company-label">Better Age Solutions Pte. Ltd.</p>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Last Updated: May 21, 2026</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <div class="toc">
+    <p class="toc-title">Contents</p>
+    <ol>
+      <li><a href="#s1">What Information Do We Collect?</a></li>
+      <li><a href="#s2">How Do We Use Your Information?</a></li>
+      <li><a href="#s3">Will Your Information Be Shared?</a></li>
+      <li><a href="#s4">How Long Do We Keep Your Information?</a></li>
+      <li><a href="#s5">How Do We Keep Your Information Safe?</a></li>
+      <li><a href="#s6">Do We Collect Information From Minors?</a></li>
+      <li><a href="#s7">What Are Your Privacy Rights?</a></li>
+      <li><a href="#s8">Existing Data and Retained Rights</a></li>
+      <li><a href="#s9">Do-Not-Track Signals</a></li>
+      <li><a href="#s10">Updates to This Policy</a></li>
+      <li><a href="#s11">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <p class="intro">We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns, please contact us at <a href="mailto:contact@betteragesolutions.com">contact@betteragesolutions.com</a>. Please read this notice carefully — it explains what we collect, how we use it, and your rights.</p>
+
+  <article>
+
+    <section id="s1">
+      <div class="section-header"><span class="section-num">01</span><h2>What Information Do We Collect?</h2></div>
+
+      <h3>Account Information</h3>
+      <p>When an organisation administrator creates a user account, we collect:</p>
+      <ul>
+        <li>Display Name</li>
+        <li>Username</li>
+        <li>Email Address</li>
+        <li>Phone Number <em>(optional)</em></li>
+        <li>Role <em>(assigned by the administrator)</em></li>
+      </ul>
+
+      <h3>Usage and Technical Data</h3>
+      <p>When you log in or use our Services, we automatically collect:</p>
+      <ul>
+        <li>IP Address</li>
+        <li>User Agent <em>(browser and device information)</em></li>
+      </ul>
+
+      <h3>Delivery Data</h3>
+      <p>As a last mile courier platform, we collect the following recipient information to fulfil deliveries:</p>
+      <ul>
+        <li>Recipient Name</li>
+        <li>Delivery Address</li>
+        <li>Postal Code</li>
+        <li>Phone Number</li>
+      </ul>
+      <p>This information is provided by your organisation and is used solely to facilitate delivery operations.</p>
+
+      <h3>Mobile App — Location Data</h3>
+      <p>When you use our mobile application, we collect location data in both the foreground and background for the following purposes:</p>
+      <ul>
+        <li><strong>EPOD Location Capture</strong> — when an Electronic Proof of Delivery (EPOD) is taken, your device's location is captured and overlaid on the EPOD image to verify the delivery location.</li>
+        <li><strong>Real-Time Driver Tracking</strong> — your location is tracked while the app is in use and while it is running in the background, to enable real-time visibility of driver whereabouts during active deliveries.</li>
+      </ul>
+      <div class="highlight">Location data is collected solely for delivery operations. It is not used for advertising or shared with third parties beyond what is necessary to operate these features. You will be prompted to grant location permissions when you first use the app. Background location access is required for driver tracking to function correctly.</div>
+
+      <h3>Cookies and Tracking Technologies</h3>
+      <p>We use authentication cookies to maintain your session and keep you securely logged in. These cookies are essential for the operation of the platform and are not used for advertising or tracking.</p>
+      <p>We also use Cloudflare services to help protect and operate our platform. Cloudflare may process limited technical data as part of this. For more information, see <a href="https://www.cloudflare.com/privacypolicy/" target="_blank">Cloudflare's Privacy Policy</a>.</p>
+    </section>
+
+    <section id="s2">
+      <div class="section-header"><span class="section-num">02</span><h2>How Do We Use Your Information?</h2></div>
+      <p>We use the information we collect for the following purposes:</p>
+      <ul>
+        <li><strong>Account Management</strong> — to create, manage, and maintain user accounts on your organisation's behalf</li>
+        <li><strong>Authentication and Security</strong> — to verify your identity and maintain session security</li>
+        <li><strong>Service Delivery</strong> — to provide, operate, and improve our platform</li>
+        <li><strong>Administrative Communications</strong> — to send notices about updates, changes to terms, or security alerts</li>
+        <li><strong>Legal Compliance</strong> — to comply with applicable laws and respond to lawful requests</li>
+        <li><strong>Fraud Prevention</strong> — to detect and prevent misuse or fraudulent activity</li>
+      </ul>
+    </section>
+
+    <section id="s3">
+      <div class="section-header"><span class="section-num">03</span><h2>Will Your Information Be Shared With Anyone?</h2></div>
+      <p>We do not sell your personal information. We may share data in the following limited circumstances:</p>
+
+      <h3>Service Providers</h3>
+      <p>We work with trusted third-party providers to operate our platform:</p>
+      <ul>
+        <li><strong>Microsoft Azure</strong> — our cloud infrastructure provider. Your data is hosted and processed on Azure servers. See <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank">Microsoft's Privacy Statement</a>.</li>
+        <li><strong>Cloudflare, Inc.</strong> — provides platform protection and reliability services. Cloudflare may process limited technical data as part of this.</li>
+      </ul>
+
+      <h3>Legal Requirements</h3>
+      <p>We may disclose your information where required by law, court order, or governmental request, or to protect the rights and safety of our users or the public.</p>
+
+      <h3>Business Transfers</h3>
+      <p>In the event of a merger, acquisition, or sale of company assets, your information may be transferred as part of that transaction. We will notify you of any such change in ownership.</p>
+
+      <h3>With Your Consent</h3>
+      <p>We may share information for any other purpose with your explicit consent.</p>
+    </section>
+
+    <section id="s4">
+      <div class="section-header"><span class="section-num">04</span><h2>How Long Do We Keep Your Information?</h2></div>
+      <p>We retain your personal information for as long as your account is active or as necessary to provide our Services, and for up to 2 years thereafter, unless a longer period is required by law.</p>
+      <p>When personal information is no longer necessary, we will securely delete or anonymise it. If deletion is not immediately possible, we will isolate the data from further processing until deletion is possible.</p>
+    </section>
+
+    <section id="s5">
+      <div class="section-header"><span class="section-num">05</span><h2>How Do We Keep Your Information Safe?</h2></div>
+      <p>We implement appropriate technical and organisational security measures, including secure session management, platform protection services, and access logging for incident response.</p>
+      <p>However, no system is completely secure. While we strive to protect your data, you are responsible for maintaining the confidentiality of your login credentials and ensuring secure access to your account.</p>
+    </section>
+
+    <section id="s6">
+      <div class="section-header"><span class="section-num">06</span><h2>Do We Collect Information From Minors?</h2></div>
+      <p>Our Services are not directed to individuals under the age of 18. We do not knowingly collect personal information from minors. If we become aware that a minor has provided us with personal information, we will deactivate the account and delete such data promptly.</p>
+      <p>Please contact us at <a href="mailto:contact@betteragesolutions.com">contact@betteragesolutions.com</a> if you believe we have inadvertently collected data from a minor.</p>
+    </section>
+
+    <section id="s7">
+      <div class="section-header"><span class="section-num">07</span><h2>What Are Your Privacy Rights?</h2></div>
+      <p>We operate in Singapore and comply with the <strong>Personal Data Protection Act 2012 (PDPA)</strong>. You have the right to:</p>
+      <ul>
+        <li>Access the personal data we hold about you</li>
+        <li>Request correction of inaccurate or incomplete personal data</li>
+        <li>Withdraw consent for the collection, use, or disclosure of your personal data <em>(subject to legal or contractual restrictions)</em></li>
+      </ul>
+      <p>To exercise any of these rights, please contact us at <a href="mailto:contact@betteragesolutions.com">contact@betteragesolutions.com</a>. We will respond within a reasonable timeframe.</p>
+      <div class="highlight">For more information on your rights under the PDPA, visit the <a href="https://www.pdpc.gov.sg" target="_blank">Personal Data Protection Commission (PDPC)</a>.</div>
+    </section>
+
+    <section id="s8">
+      <div class="section-header"><span class="section-num">08</span><h2>Existing Data and Retained Rights</h2></div>
+      <p>Data collected prior to the effective date of this privacy notice was collected in accordance with the terms in effect at the time and remains lawfully held by Better Age Solutions Pte. Ltd. This policy does not invalidate or affect the legitimacy of any such data.</p>
+      <p>Where you withdraw your consent, we may nonetheless retain and continue to use your data to the extent necessary to:</p>
+      <ul>
+        <li>Comply with any legal or regulatory obligation</li>
+        <li>Establish, exercise, or defend legal claims</li>
+        <li>Fulfil any outstanding contractual obligations</li>
+        <li>Maintain records required for audit or compliance purposes</li>
+      </ul>
+      <p>Any retained data will be held securely and used only for the purposes stated above — not for marketing or any other purpose.</p>
+    </section>
+
+    <section id="s9">
+      <div class="section-header"><span class="section-num">09</span><h2>Do-Not-Track Signals</h2></div>
+      <p>Our platform does not currently respond to Do-Not-Track (DNT) browser signals, as no uniform standard has been established. If a recognised standard is adopted in the future, we will update this notice accordingly.</p>
+    </section>
+
+    <section id="s10">
+      <div class="section-header"><span class="section-num">10</span><h2>Updates to This Policy</h2></div>
+      <p>We may update this privacy notice from time to time. The updated version will be effective as of the "Last Updated" date at the top of this page. For material changes, we will provide prominent notice or direct notification.</p>
+    </section>
+
+    <section id="s11">
+      <div class="section-header"><span class="section-num">11</span><h2>Contact Us</h2></div>
+      <div class="contact-block">
+        <strong>Better Age Solutions Pte. Ltd.</strong><br>
+        138 Robinson Road<br>
+        #14-03 Oxley Tower<br>
+        Singapore 068906<br><br>
+        <strong>Email:</strong> <a href="mailto:contact@betteragesolutions.com">contact@betteragesolutions.com</a>
+      </div>
+    </section>
+
+  </article>
+</div>
+
+<footer>
+  <div class="container">
+    © 2026 Better Age Solutions Pte. Ltd. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
