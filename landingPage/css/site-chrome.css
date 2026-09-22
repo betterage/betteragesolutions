@@ -1,0 +1,217 @@
+/* ──────────────────────────────────────────────────────────────
+   Site chrome shared by every page.
+
+   Holds the design tokens, the accessibility baseline, and the
+   simplified top bar / footer used by the sub-pages. Loaded first,
+   so page stylesheets can override anything here.
+
+   The landing page keeps its own Bootstrap navbar and footer; the
+   sub-pages use .site-nav / .site-footer below, which need neither
+   Bootstrap nor JavaScript.
+   ────────────────────────────────────────────────────────────── */
+
+:root {
+    /* Brand */
+    --bas-blue: #0068A7;
+    --bas-blue-rgb: 0, 104, 167;
+    --bas-blue-dark: #004f80;
+    --bas-blue-bright: #33AEFF;
+
+    /* Text */
+    --bas-ink: #1a1a2e;
+    --bas-text: #212529;
+    --bas-text-soft: #495057;
+    --bas-text-muted: #5a6272;
+    --bas-text-faint: #6c757d;
+
+    /* Surfaces */
+    --bas-surface: #ffffff;
+    --bas-surface-alt: #f7f7f7;
+    --bas-surface-tint: #f0f7ff;
+    --bas-surface-tint-2: #e8f2fb;
+    --bas-footer-top: #111827;
+
+    /* Accents */
+    --bas-linkedin: #0077b5;
+    --bas-icon-muted: #787878;
+
+    /* Elevation */
+    --bas-shadow-card: 0 4px 6px rgba(0, 0, 0, 0.04), 0 12px 40px rgba(0, 0, 0, 0.06);
+    --bas-shadow-card-lg: 0 4px 6px rgba(0, 0, 0, 0.04), 0 20px 60px rgba(0, 0, 0, 0.08);
+    --bas-shadow-panel: 0 4px 6px rgba(0, 0, 0, 0.04), 0 12px 40px rgba(var(--bas-blue-rgb), 0.10), 0 0 0 1px rgba(var(--bas-blue-rgb), 0.06);
+    --bas-shadow-panel-hover: 0 8px 16px rgba(0, 0, 0, 0.06), 0 24px 56px rgba(var(--bas-blue-rgb), 0.16), 0 0 0 1px rgba(var(--bas-blue-rgb), 0.10);
+
+    /* Motion */
+    --bas-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ── Accessibility baseline ── */
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--bas-blue);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ── Sub-page top bar ──
+   Matches the landing page navbar in its scrolled state. No collapse
+   menu: the section links point back into the landing page and simply
+   step aside on narrow screens, leaving the brand and the back link. */
+
+.site-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    background-color: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08), 0 4px 24px rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid rgba(var(--bas-blue-rgb), 0.12);
+}
+
+.site-nav-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.site-nav-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: sofia-pro, sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--bas-ink);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.site-nav-brand:hover {
+    color: var(--bas-blue);
+}
+
+.site-nav-brand img {
+    width: 30px;
+    height: 24px;
+}
+
+.site-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: auto;
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.site-nav-links a {
+    font-family: sofia-pro, sans-serif;
+    font-size: 0.95rem;
+    color: var(--bas-ink);
+    text-decoration: none;
+}
+
+.site-nav-links a:hover {
+    color: var(--bas-blue);
+}
+
+.site-nav-back {
+    margin-left: auto;
+    font-family: sofia-pro, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--bas-blue);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.site-nav-links + .site-nav-back {
+    margin-left: 0;
+}
+
+.site-nav-back:hover {
+    color: var(--bas-blue-dark);
+}
+
+@media (max-width: 767.98px) {
+    .site-nav-links {
+        display: none;
+    }
+    .site-nav-inner {
+        padding: 0.75rem 1rem;
+    }
+    .site-nav-brand {
+        font-size: 1.05rem;
+    }
+}
+
+/* ── Shared footer ── */
+
+.site-footer {
+    background: linear-gradient(180deg, var(--bas-footer-top) 0%, #000000 100%);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(var(--bas-blue-rgb), 0.6), transparent);
+}
+
+.site-footer-inner {
+    position: relative;
+    z-index: 1;
+    font-family: sofia-pro, sans-serif;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.site-footer-inner > * + * {
+    margin-top: 0.5rem;
+}
+
+.site-footer-inner a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+
+.site-footer-inner a:hover {
+    color: #ffffff;
+}
+
+.site-footer-linkedin {
+    display: inline-flex;
+    margin-top: 0.75rem;
+}
+
+.site-footer-linkedin svg {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+}

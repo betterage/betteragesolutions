@@ -1,38 +1,3 @@
-:root {
-    /* Brand */
-    --bas-blue: #0068A7;
-    --bas-blue-rgb: 0, 104, 167;
-    --bas-blue-dark: #004f80;
-    --bas-blue-bright: #33AEFF;
-
-    /* Text */
-    --bas-ink: #1a1a2e;
-    --bas-text: #212529;
-    --bas-text-soft: #495057;
-    --bas-text-muted: #5a6272;
-    --bas-text-faint: #6c757d;
-
-    /* Surfaces */
-    --bas-surface: #ffffff;
-    --bas-surface-alt: #f7f7f7;
-    --bas-surface-tint: #f0f7ff;
-    --bas-surface-tint-2: #e8f2fb;
-    --bas-footer-top: #111827;
-
-    /* Accents */
-    --bas-linkedin: #0077b5;
-    --bas-icon-muted: #787878;
-
-    /* Elevation */
-    --bas-shadow-card: 0 4px 6px rgba(0, 0, 0, 0.04), 0 12px 40px rgba(0, 0, 0, 0.06);
-    --bas-shadow-card-lg: 0 4px 6px rgba(0, 0, 0, 0.04), 0 20px 60px rgba(0, 0, 0, 0.08);
-    --bas-shadow-panel: 0 4px 6px rgba(0, 0, 0, 0.04), 0 12px 40px rgba(var(--bas-blue-rgb), 0.10), 0 0 0 1px rgba(var(--bas-blue-rgb), 0.06);
-    --bas-shadow-panel-hover: 0 8px 16px rgba(0, 0, 0, 0.06), 0 24px 56px rgba(var(--bas-blue-rgb), 0.16), 0 0 0 1px rgba(var(--bas-blue-rgb), 0.10);
-
-    /* Motion */
-    --bas-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
 /* <picture> is a layout-neutral wrapper: the <img> stays the direct
    flex/grid child it was before the WebP sources were added. */
 picture {
@@ -862,13 +827,6 @@ header::before {
 }
 
 /* ── Keyboard focus ── */
-a:focus-visible,
-button:focus-visible,
-[tabindex]:focus-visible {
-    outline: 3px solid var(--bas-blue);
-    outline-offset: 3px;
-}
-
 header .btn-get-started:focus-visible {
     outline-color: #ffffff;
 }
@@ -882,15 +840,6 @@ header .btn-get-started:focus-visible {
    gradients, no scroll-hint pulse, and AOS reveals resolve instantly
    (AOS.init also disables itself -- this covers it if JS is slow). */
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-
     .hero-logo,
     header .hero-tagline::after,
     header::before,
