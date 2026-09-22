@@ -89,6 +89,8 @@ header .overlay {
 @media (pointer: coarse) and (hover: none) {
     header {
         background: url('../assets/img/header.jpg') black no-repeat center center scroll;
+        background-image: image-set(url('../assets/img/header.webp') type('image/webp'),
+                                    url('../assets/img/header.jpg') type('image/jpeg'));
     }
     header video {
         display: none;
@@ -275,7 +277,7 @@ header .overlay {
     );
 }
 
-header .container img[alt="Logo"] {
+header .hero-logo {
     filter: drop-shadow(0 4px 24px rgba(0, 104, 167, 0.5));
     animation: heroLogoFloat 6s ease-in-out infinite;
 }
