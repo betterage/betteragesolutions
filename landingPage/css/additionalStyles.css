@@ -43,6 +43,7 @@ header {
     position: relative;
     background-color: black;
     height: 100vh;
+    height: 100svh;
     min-height: 25rem;
     width: 100%;
     overflow: hidden;
@@ -191,8 +192,7 @@ body {
     background: var(--bas-blue-dark);
 }
 
-section h1.display-4,
-section h2.display-4 {
+section .display-4 {
     letter-spacing: -0.5px;
 }
 
@@ -206,7 +206,8 @@ section h2.display-4 {
     box-shadow: none !important;
 }
 
-#mainNav.scrolled {
+#mainNav.scrolled,
+#mainNav.hide:focus-within {
     background-color: rgba(255, 255, 255, 0.82) !important;
     backdrop-filter: blur(16px) saturate(180%);
     -webkit-backdrop-filter: blur(16px) saturate(180%);
@@ -216,7 +217,9 @@ section h2.display-4 {
 }
 
 #mainNav.scrolled .navbar-brand,
-#mainNav.scrolled .nav-link {
+#mainNav.scrolled .nav-link,
+#mainNav.hide:focus-within .navbar-brand,
+#mainNav.hide:focus-within .nav-link {
     color: var(--bas-ink) !important;
 }
 
@@ -250,6 +253,7 @@ header .display-4.font-alt {
 
 header .hero-tagline {
     font-size: 24px;
+    line-height: 1.2;
     margin-bottom: 40px;
     font-weight: 300;
     letter-spacing: 0.5px;
@@ -776,8 +780,7 @@ header::before {
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
     }
-    section h1.display-4,
-    section h2.display-4 {
+    section .display-4 {
         font-size: 2rem !important;
     }
     .masthead .display-1 {
@@ -856,4 +859,58 @@ header::before {
 
 .map-wrapper iframe {
     border: 0;
+}
+
+/* ── Keyboard focus ── */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--bas-blue);
+    outline-offset: 3px;
+}
+
+header .btn-get-started:focus-visible {
+    outline-color: #ffffff;
+}
+
+#mainNav.hide:focus-within {
+    transform: translateY(0);
+}
+
+/* ── Reduced motion ──
+   Honour the OS-level preference: no parallax-ish float, no looping
+   gradients, no scroll-hint pulse, and AOS reveals resolve instantly
+   (AOS.init also disables itself -- this covers it if JS is slow). */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .hero-logo,
+    header .hero-tagline::after,
+    header::before,
+    header::after {
+        animation: none !important;
+    }
+
+    [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    /* the looping hero video is motion too -- swap in the still frame */
+    header {
+        background: url('../assets/img/header.jpg') black no-repeat center center scroll;
+        background-image: image-set(url('../assets/img/header.webp') type('image/webp'),
+                                    url('../assets/img/header.jpg') type('image/jpeg'));
+    }
+
+    header video {
+        display: none;
+    }
 }
