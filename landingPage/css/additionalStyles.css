@@ -1,3 +1,9 @@
+/* <picture> is a layout-neutral wrapper: the <img> stays the direct
+   flex/grid child it was before the WebP sources were added. */
+picture {
+    display: contents;
+}
+
 .card {
     border-color: #fff;
 }

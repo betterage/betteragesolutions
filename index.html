@@ -12,6 +12,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
     <link rel="manifest" href="./images/site.webmanifest">
+    <link rel="preconnect" href="https://use.typekit.net" crossorigin>
+    <link rel="preconnect" href="https://p.typekit.net" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="stylesheet" href="https://use.typekit.net/geu3alh.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="./landingPage/aos/aos.css" rel="stylesheet">
@@ -62,7 +66,7 @@
             <div class="d-flex h-100 text-center align-items-center">
                 <div class="w-100 text-white">
                     <div class="px-5 px-sm-0"><img style="width:164px; height:130px;" src="./images/bas_logo.png"
-                            alt="Logo"></div>
+                            alt="Better Age Solutions logo" width="329" height="260" decoding="async"></div>
                     <h1 class="display-4 font-alt mt-2 mb-2">Better Age Solutions</h1>
                     <h2 style="font-size: 24px; margin-bottom: 40px;">Always striving for a better tomorrow.</h2>
                     <a href="#about" class="btn-get-started">Get Started</a>
@@ -79,7 +83,8 @@
             <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
                 <div class="col-sm-8 col-md-6 mb-4" data-aos="fade-right" data-aos-duration="800">
                     <div class="px-5 px-sm-0 about-logo-wrapper">
-                        <img class="img-fluid" src="./images/bas_logo.png" alt="Logo">
+                        <img class="img-fluid" src="./images/bas_logo.png" alt="Better Age Solutions logo"
+                             width="329" height="260" loading="lazy" decoding="async">
                     </div>
                 </div>
                 <div class="col-12 col-lg-5" data-aos="fade-left" data-aos-duration="800" data-aos-delay="150">
@@ -140,7 +145,12 @@
                 </div>
                 <div class="col-sm-8 col-md-6 d-flex justify-content-center" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
                     <div class="px-5 px-sm-0 soc2-badge-wrapper">
-                        <a href="http://www.aicpa.org/soc4so"><img class="img-fluid" src="./images/soc2.png" alt="SOC2"></a>
+                        <a href="http://www.aicpa.org/soc4so"><picture>
+                                <source srcset="./images/soc2.webp" type="image/webp">
+                                <img class="img-fluid" src="./images/soc2.png"
+                                     alt="AICPA SOC 2 Type 2 certification badge"
+                                     width="720" height="720" loading="lazy" decoding="async">
+                            </picture></a>
                     </div>
                 </div>
             </div>
@@ -171,9 +181,13 @@
                     </div>
                 </div>
            <div class="col-12 col-lg-6 d-flex justify-content-center align-items-center" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
-                    <img src="./landingPage/assets/img/WeTrack Dashboard-front.png" alt="WeTrack Dashboard"
-                         class="img-fluid"
-                         style="filter: drop-shadow(0 16px 40px rgba(0, 104, 167, 0.2));">
+                    <picture>
+                        <source srcset="./landingPage/assets/img/wetrack-dashboard.webp" type="image/webp">
+                        <img src="./landingPage/assets/img/wetrack-dashboard.png"
+                             alt="WeTrack web dashboard showing live delivery tracking"
+                             class="img-fluid" width="720" height="720" loading="lazy" decoding="async"
+                             style="filter: drop-shadow(0 16px 40px rgba(0, 104, 167, 0.2));">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -205,8 +219,13 @@
                 </div>
               
       <div class="col-lg-6 order-lg-0 text-center" data-aos="fade-left" data-aos-duration="900" data-aos-delay="150">
-                    <img src="./landingPage/assets/img/WeTrack Mobile Landing-portrait.png" alt="WeTrack Mobile App"
-                         class="img-fluid" style="max-height: 520px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.18));">
+                    <picture>
+                        <source srcset="./landingPage/assets/img/wetrack-mobile.webp" type="image/webp">
+                        <img src="./landingPage/assets/img/wetrack-mobile.png"
+                             alt="WeTrack mobile app on a phone, showing a last-mile delivery route"
+                             class="img-fluid" width="524" height="1040" loading="lazy" decoding="async"
+                             style="width: auto; max-height: 520px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.18));">
+                    </picture>
                 </div> 
 
 
@@ -241,7 +260,12 @@
             <div class="founder-card" data-aos="fade-up" data-aos-duration="800">
                 <div class="row align-items-start g-0">
                     <div class="col-lg-4 founder-photo-col">
-                        <img class="img-fluid founder-photo" src="./images/founder.png" alt="founder">
+                        <picture>
+                            <source srcset="./images/founder.webp" type="image/webp">
+                            <img class="img-fluid founder-photo" src="./images/founder.png"
+                                 alt="Ong Hian Leong, Managing Director and Founder"
+                                 width="768" height="768" loading="lazy" decoding="async">
+                        </picture>
                         <div class="founder-identity">
                             <h2 class="font-alt founder-name">Ong Hian Leong</h2>
                             <h5 class="founder-title">Managing Director &amp; Founder</h5>
